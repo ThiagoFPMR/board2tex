@@ -8,8 +8,16 @@ import board2tex as b2t
 
 
 def main(board_image_path: str, api_key: str, output_dir: str):
+
+    prompt = """
+        Descreva a imagem anexada usando LaTeX e TikZ. Foque na parte que parece ser
+        intencional. Ignore traços aleatórios que não fazem sentido. Produza um bloco
+        de código em um formato que pode ser facilmente copiado e colado em um documento.
+        Forneça também quaisquer dependências necessárias para usá-lo.
+    """
+    
     parser = b2t.BoardParser()
-    transcriber = b2t.GeminiTranscriber(api_key=api_key)
+    transcriber = b2t.GeminiTranscriber(prompt, api_key=api_key)
 
     board_image = cv2.imread(board_image_path)
     if board_image is None:
