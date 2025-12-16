@@ -15,3 +15,5 @@ board2tex is a Python tool designed to convert images of whiteboard drawings and
 - [ ] Ability to select board in broader picture and adjust POV
 - [ ] Ability to select content of interest in the board
 - [ ] Upgrade separation by color and make it optional
+- [ ] Test different VLM models for board transcription
+- [ ] Test parameters in different settings and make some adjustable
